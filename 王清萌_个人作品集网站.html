@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>王清萌 | 产品营销·市场营销·数据分析·商业洞察</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 60px 20px;
+            border-radius: 15px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        section {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        h2 {
+            color: #667eea;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #e0e6ff;
+            display: inline-block;
+        }
+        
+        .education-item, .experience-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid #e0e6ff;
+        }
+        
+        .experience-item:last-child, .education-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .item-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #444;
+        }
+        
+        .item-date {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .item-company {
+            color: #667eea;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        ul {
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            position: relative;
+        }
+        
+        li::before {
+            content: "•";
+            color: #667eea;
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-card {
+            background: #f8f9ff;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .skill-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #e0e6ff 0%, #e0e6ff 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 0.5em;
+            background-position: 0 88%;
+            padding: 0 3px;
+        }
+        
+        .achievement {
+            color: #764ba2;
+            font-weight: 500;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .contact-info {
+                gap: 15px;
+            }
+            
+            section {
+                padding: 20px;
+            }
+            
+            .item-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>王清萌</h1>
+            <p class="subtitle">产品营销 | 市场营销 | 数据分析 | 商业洞察</p>
+            <div class="contact-info">
+                <div class="contact-item">📞 15989521481</div>
+                <div class="contact-item">📧 t330031260@mail.bnbu.edu.cn</div>
+                <div class="contact-item">🎓 北师港浸大 新闻传播(公关与广告)</div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="education">
+            <h2>教育背景</h2>
+            <div class="education-item">
+                <div class="item-header">
+                    <span class="item-title">公共关系与广告学 本科</span>
+                    <span class="item-date">2023.09 - 2027.06</span>
+                </div>
+                <div class="item-company">北京师范大学-香港浸会大学联合国际学院</div>
+                <ul>
+                    <li>GPA 3.78/4.0，专业排名前10%，<span class="achievement">校级一等奖学金</span></li>
+                    <li>核心课程：整合营销传播、消费者行为、Python数据分析、SPSS、媒体策划</li>
+                    <li>技能：Excel高级函数、SPSS、Python、PS/AI、SQL基础</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>实习经历</h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">公关&活动营销实习生</span>
+                    <span class="item-date">2025.07 - 2025.09</span>
+                </div>
+                <div class="item-company">人民日报-证券时报华南总部</div>
+                <ul>
+                    <li>对接8家华南上市公司，完成深度调研，撰写3份分析纪要，支持财经报道发布</li>
+                    <li>策划执行<span class="highlight">160人香港大学高端参访活动</span>，客户满意度100%</li>
+                    <li>使用Excel分析上市公司数据，制作行业简报素材</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">市场投放与数据分析实习生</span>
+                    <span class="item-date">2025.04 - 2025.06</span>
+                </div>
+                <div class="item-company">高途教育</div>
+                <ul>
+                    <li>构建转化漏斗模型，优化投放策略，<span class="achievement">转化率提升15%</span></li>
+                    <li>策划3场校园推广，A/B测试优化，<span class="achievement">到场转化率120%</span></li>
+                    <li>0-1运营小红书账号，20天18篇笔记，<span class="achievement">单篇4.3万阅读</span></li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">品牌营销实习生</span>
+                    <span class="item-date">2024.07 - 2024.08</span>
+                </div>
+                <div class="item-company">新东方</div>
+                <ul>
+                    <li>负责留学小红书账号，1个月产出22篇内容</li>
+                    <li>数据驱动优化，<span class="achievement">互动率从5%提升至12%</span></li>
+                    <li><span class="achievement">单月涨粉800+</span>，同期实习生最高效率</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="practice">
+            <h2>项目实践</h2>
+            
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">拜耳“宫益健康”公关策划项目</span>
+                    <span class="item-date">2025.05 - 2025.08</span>
+                </div>
+                <div class="item-company">第十届中国大学生公共关系策划大赛</div>
+                <ul>
+                    <li>访谈50+女性用户，撰写需求分析报告，明确传播方向</li>
+                    <li>全流程策划线上线下传播方案，<span class="achievement">荣获全国二等奖</span></li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="item-header">
+                    <span class="item-title">个人小红书账号运营</span>
+                    <span class="item-date">2024.07 - 2024.08</span>
+                </div>
+                <ul>
+                    <li>0-1搭建账号，完成赛道分析、内容规划、视觉设计全流程</li>
+                    <li><span class="achievement">30万+爆款笔记</span>，8篇万阅内容，独立设计剪辑</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>核心技能</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>📊 数据分析</h3>
+                    <p>Excel高级函数、SPSS、Python、SQL基础、数据可视化、转化漏斗分析</p>
+                </div>
+                <div class="skill-card">
+                    <h3>📱 新媒体运营</h3>
+                    <p>小红书全案运营、内容策略、A/B测试、爆款打造、粉丝增长</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🎯 营销策划</h3>
+                    <p>活动全案策划、媒体投放、用户洞察、整合营销传播、公关执行</p>
+                </div>
+                <div class="skill-card">
+                    <h3>🎨 设计工具</h3>
+                    <p>PS、AI、Office高级排版、宣传物料设计、短视频剪辑</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="advantage">
+            <h2>核心竞争力</h2>
+            <ul>
+                <li><span class="highlight">数据+营销双能力</span>：公关广告专业背景+数据分析硬核技能，适配产品/市场/商业洞察岗位</li>
+                <li><span class="highlight">大厂实战经验</span>：人民日报、高途、新东方等多段实习，可直接上手工作</li>
+                <li><span class="highlight">爆款打造能力</span>：小红书单篇30万+阅读，具备流量与转化思维</li>
+                <li><span class="highlight">全流程执行力</span>：从调研、策划、执行到数据复盘，完整项目经验</li>
+                <li>持有<span class="achievement">市场分析研究员(MARs)Level1证书</span>，雅思7分，全英文工作能力</li>
+            </ul>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 王清萌 | 个人作品集网站 | 期待产品营销/市场营销/数据分析/商业洞察实习机会</p>
+    </footer>
+</body>
+</html>

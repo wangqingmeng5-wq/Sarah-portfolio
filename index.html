@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" style="scroll-behavior: smooth;">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,21 +9,64 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
         body {
             background-color: #f5f7fa;
             color: #333;
             line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
-        
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
-        
+        /* 导航栏 */
+        nav {
+            background: white;
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            flex-wrap: wrap;
+        }
+        nav a.brand {
+            font-weight: bold;
+            color: #667eea;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s, transform 0.2s;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .btn:hover {
+            opacity: 0.9;
+            transform: scale(1.02);
+        }
+        .btn-outline {
+            background: transparent;
+            color: #333;
+            border: 1px solid #ddd;
+        }
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -33,116 +76,120 @@
             margin-bottom: 40px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        
+        .profile-pic {
+            width:150px;
+            height:150px;
+            border-radius:50%;
+            border: 4px solid white;
+            margin-bottom:20px;
+            object-fit:cover;
+        }
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
-        
         .subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
             margin-bottom: 20px;
         }
-        
         .contact-info {
             display: flex;
             justify-content: center;
             gap: 30px;
             flex-wrap: wrap;
+            margin-bottom: 20px;
         }
-        
         .contact-item {
             display: flex;
             align-items: center;
             gap: 8px;
         }
-        
+        .lang-switch {
+            margin-top: 10px;
+        }
         section {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
+            border-radius: 20px;
+            padding: 35px;
+            margin-bottom: 35px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
-        
+        section:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
         h2 {
-            color: #667eea;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #e0e6ff;
-            display: inline-block;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
         }
-        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 2px;
+        }
         .education-item, .experience-item {
             margin-bottom: 25px;
-            padding-left: 20px;
-            border-left: 3px solid #e0e6ff;
+            padding-left: 25px;
+            border-left: 4px solid #667eea;
+            transition: border-color 0.3s;
         }
-        
-        .experience-item:last-child, .education-item:last-child {
-            margin-bottom: 0;
+        .experience-item:hover {
+            border-left-color: #764ba2;
         }
-        
         .item-header {
             display: flex;
             justify-content: space-between;
             margin-bottom: 8px;
+            flex-wrap: wrap;
         }
-        
         .item-title {
             font-weight: bold;
             font-size: 1.1rem;
             color: #444;
         }
-        
         .item-date {
             color: #666;
             font-size: 0.9rem;
         }
-        
         .item-company {
             color: #667eea;
             font-weight: 500;
             margin-bottom: 10px;
         }
-        
         ul {
             padding-left: 20px;
         }
-        
         li {
             margin-bottom: 8px;
             position: relative;
         }
-        
-        li::before {
-            content: "•";
-            color: #667eea;
-            font-weight: bold;
-            position: absolute;
-            left: -15px;
-        }
-        
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 20px;
         }
-        
         .skill-card {
             background: #f8f9ff;
             padding: 20px;
             border-radius: 10px;
             border-left: 4px solid #667eea;
         }
-        
         .skill-card h3 {
             color: #667eea;
             margin-bottom: 15px;
             font-size: 1.1rem;
         }
-        
         .highlight {
             background: linear-gradient(120deg, #e0e6ff 0%, #e0e6ff 100%);
             background-repeat: no-repeat;
@@ -150,32 +197,98 @@
             background-position: 0 88%;
             padding: 0 3px;
         }
-        
         .achievement {
             color: #764ba2;
             font-weight: 500;
         }
-        
         footer {
             text-align: center;
             padding: 30px;
             color: #666;
             font-size: 0.9rem;
         }
-        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* 作品集卡片 */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .project-card {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 15px;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        .project-card:hover {
+            background: #eef0ff;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102,126,234,0.2);
+        }
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        /* 模态框 */
+        #projectModal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            align-items: center;
+            justify-content: center;
+        }
+        #projectModal>div {
+            background: white;
+            max-width: 700px;
+            margin: auto;
+            border-radius: 20px;
+            padding: 40px;
+            position: relative;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        #backToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 99;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(102,126,234,0.3);
+            transition: opacity 0.3s;
+        }
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
             }
-            
             .contact-info {
                 gap: 15px;
             }
-            
             section {
                 padding: 20px;
             }
-            
             .item-header {
                 flex-direction: column;
             }
@@ -183,141 +296,300 @@
     </style>
 </head>
 <body>
+    <!-- 导航栏 -->
+    <nav>
+        <a href="#" class="brand">WANG Qingmeng</a>
+        <div class="nav-links">
+            <a href="#education" class="btn btn-outline"><span data-lang="zh">教育</span><span data-lang="en" style="display:none;">Education</span></a>
+            <a href="#experience" class="btn btn-outline"><span data-lang="zh">实习</span><span data-lang="en" style="display:none;">Experience</span></a>
+            <a href="#portfolio" class="btn btn-outline"><span data-lang="zh">作品</span><span data-lang="en" style="display:none;">Works</span></a>
+            <a href="#skills" class="btn btn-outline"><span data-lang="zh">技能</span><span data-lang="en" style="display:none;">Skills</span></a>
+        </div>
+    </nav>
+
+    <!-- 头部 -->
     <header>
         <div class="container">
+            <!-- 替换下面的 src 为你的照片链接 -->
+            <img src="https://github.com/wangqingmeng5-wq/Sarah-portfolio/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260415114447_127_16.jpg" alt="王清萌" class="profile-pic">
             <h1>王清萌</h1>
-            <p class="subtitle">产品营销 | 市场营销 | 数据分析 | 商业洞察</p>
+            <p class="subtitle">
+                <span data-lang="zh">产品营销 | 市场营销 | 数据分析 | 商业洞察</span>
+                <span data-lang="en" style="display:none;">Product Marketing | Marketing | Data Analytics | Business Insights</span>
+            </p>
             <div class="contact-info">
                 <div class="contact-item">📞 15989521481</div>
                 <div class="contact-item">📧 t330031260@mail.bnbu.edu.cn</div>
-                <div class="contact-item">🎓 北师港浸大 新闻传播(公关与广告)</div>
+                <div class="contact-item">🎓 <span data-lang="zh">北师港浸大 新闻传播(公关与广告)</span><span data-lang="en" style="display:none;">BNBU, Communication (PR & Advertising)</span></div>
+            </div>
+            <div class="lang-switch">
+                <button class="btn" onclick="switchLang('zh')" style="background:white; color:#667eea; border:1px solid white;">中文</button>
+                <button class="btn" onclick="switchLang('en')" style="background:white; color:#667eea; border:1px solid white;">EN</button>
             </div>
         </div>
     </header>
 
     <div class="container">
-        <section id="education">
-            <h2>教育背景</h2>
+        <!-- 教育背景 -->
+        <section id="education" class="fade-in">
+            <h2><span data-lang="zh">教育背景</span><span data-lang="en" style="display:none;">Education</span></h2>
             <div class="education-item">
                 <div class="item-header">
-                    <span class="item-title">公共关系与广告学 本科</span>
+                    <span class="item-title">
+                        <span data-lang="zh">公共关系与广告学 本科</span>
+                        <span data-lang="en" style="display:none;">B.A. in Public Relations & Advertising</span>
+                    </span>
                     <span class="item-date">2023.09 - 2027.06</span>
                 </div>
                 <div class="item-company">北京师范大学-香港浸会大学联合国际学院</div>
                 <ul>
-                    <li>GPA 3.78/4.0，专业排名前10%，<span class="achievement">校级一等奖学金</span></li>
-                    <li>核心课程：整合营销传播、消费者行为、Python数据分析、SPSS、媒体策划</li>
-                    <li>技能：Excel高级函数、SPSS、Python、PS/AI、SQL基础</li>
+                    <li><span data-lang="zh">GPA 3.78/4.0，专业排名前10%，<span class="achievement">校级一等奖学金</span></span><span data-lang="en" style="display:none;">GPA 3.78/4.0, Top 10%, <span class="achievement">First-Class Scholarship</span></span></li>
+                    <li><span data-lang="zh">核心课程：整合营销传播、消费者行为、Python数据分析、SPSS、媒体策划</span><span data-lang="en" style="display:none;">Core Courses: IMC, Consumer Behavior, Python, SPSS, Media Planning</span></li>
+                    <li><span data-lang="zh">技能：Excel高级函数、SPSS、Python、PS/AI、SQL基础</span><span data-lang="en" style="display:none;">Skills: Advanced Excel, SPSS, Python, Photoshop/Illustrator, SQL basics</span></li>
                 </ul>
             </div>
         </section>
 
-        <section id="experience">
-            <h2>实习经历</h2>
-            
+        <!-- 实习经历 -->
+        <section id="experience" class="fade-in">
+            <h2><span data-lang="zh">实习经历</span><span data-lang="en" style="display:none;">Internship Experience</span></h2>
+
             <div class="experience-item">
                 <div class="item-header">
-                    <span class="item-title">公关&活动营销实习生</span>
+                    <span class="item-title"><span data-lang="zh">公关&活动营销实习生</span><span data-lang="en" style="display:none;">PR & Event Marketing Intern</span></span>
                     <span class="item-date">2025.07 - 2025.09</span>
                 </div>
                 <div class="item-company">人民日报-证券时报华南总部</div>
                 <ul>
-                    <li>对接8家华南上市公司，完成深度调研，撰写3份分析纪要，支持财经报道发布</li>
-                    <li>策划执行<span class="highlight">160人香港大学高端参访活动</span>，客户满意度100%</li>
-                    <li>使用Excel分析上市公司数据，制作行业简报素材</li>
+                    <li><span data-lang="zh">对接8家华南上市公司，完成深度调研，撰写3份分析纪要，支持财经报道发布</span><span data-lang="en" style="display:none;">Conducted in-depth research on 8 listed companies, wrote 3 analysis memos for financial reports</span></li>
+                    <li><span data-lang="zh">策划执行<span class="highlight">160人香港大学高端参访活动</span>，客户满意度100%</span><span data-lang="en" style="display:none;">Planned and executed a <span class="highlight">160-person HKU executive visit</span>, 100% satisfaction</span></li>
+                    <li><span data-lang="zh">使用Excel分析上市公司数据，制作行业简报素材</span><span data-lang="en" style="display:none;">Analyzed financial data with Excel, created industry briefing materials</span></li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="item-header">
-                    <span class="item-title">市场投放与数据分析实习生</span>
+                    <span class="item-title"><span data-lang="zh">市场投放与数据分析实习生</span><span data-lang="en" style="display:none;">Marketing & Data Analytics Intern</span></span>
                     <span class="item-date">2025.04 - 2025.06</span>
                 </div>
                 <div class="item-company">高途教育</div>
                 <ul>
-                    <li>构建转化漏斗模型，优化投放策略，<span class="achievement">转化率提升15%</span></li>
-                    <li>策划3场校园推广，A/B测试优化，<span class="achievement">到场转化率120%</span></li>
-                    <li>0-1运营小红书账号，20天18篇笔记，<span class="achievement">单篇4.3万阅读</span></li>
+                    <li><span data-lang="zh">构建转化漏斗模型，优化投放策略，<span class="achievement">转化率提升15%</span></span><span data-lang="en" style="display:none;">Built conversion funnel, optimized ad strategy, <span class="achievement">conversion rate +15%</span></span></li>
+                    <li><span data-lang="zh">策划3场校园推广，A/B测试优化，<span class="achievement">到场转化率120%</span></span><span data-lang="en" style="display:none;">Organized 3 campus events with A/B testing, <span class="achievement">show-up conversion 120%</span></span></li>
+                    <li><span data-lang="zh">0-1运营小红书账号，20天18篇笔记，<span class="achievement">单篇4.3万阅读</span></span><span data-lang="en" style="display:none;">Built RED account from 0 to 1, 18 posts in 20 days, <span class="achievement">43K views per post</span></span></li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="item-header">
-                    <span class="item-title">品牌营销实习生</span>
+                    <span class="item-title"><span data-lang="zh">品牌营销实习生</span><span data-lang="en" style="display:none;">Brand Marketing Intern</span></span>
                     <span class="item-date">2024.07 - 2024.08</span>
                 </div>
                 <div class="item-company">新东方</div>
                 <ul>
-                    <li>负责留学小红书账号，1个月产出22篇内容</li>
-                    <li>数据驱动优化，<span class="achievement">互动率从5%提升至12%</span></li>
-                    <li><span class="achievement">单月涨粉800+</span>，同期实习生最高效率</li>
+                    <li><span data-lang="zh">负责留学小红书账号，1个月产出22篇内容</span><span data-lang="en" style="display:none;">Managed study-abroad RED account, 22 posts in 1 month</span></li>
+                    <li><span data-lang="zh">数据驱动优化，<span class="achievement">互动率从5%提升至12%</span></span><span data-lang="en" style="display:none;">Data-driven optimization, <span class="achievement">engagement rate up from 5% to 12%</span></span></li>
+                    <li><span data-lang="zh"><span class="achievement">单月涨粉800+</span>，同期实习生最高效率</span><span data-lang="en" style="display:none;"><span class="achievement">+800 followers in 1 month</span>, highest among interns</span></li>
                 </ul>
             </div>
         </section>
 
-        <section id="practice">
-            <h2>项目实践</h2>
-            
+        <!-- 项目实践 -->
+        <section id="practice" class="fade-in">
+            <h2><span data-lang="zh">项目实践</span><span data-lang="en" style="display:none;">Projects</span></h2>
+
             <div class="experience-item">
                 <div class="item-header">
-                    <span class="item-title">拜耳“宫益健康”公关策划项目</span>
+                    <span class="item-title"><span data-lang="zh">拜耳“宫益健康”公关策划项目</span><span data-lang="en" style="display:none;">Bayer "Cervical Health" PR Campaign</span></span>
                     <span class="item-date">2025.05 - 2025.08</span>
                 </div>
-                <div class="item-company">第十届中国大学生公共关系策划大赛</div>
+                <div class="item-company"><span data-lang="zh">第十届中国大学生公共关系策划大赛</span><span data-lang="en" style="display:none;">10th China PR Planning Competition</span></div>
                 <ul>
-                    <li>访谈50+女性用户，撰写需求分析报告，明确传播方向</li>
-                    <li>全流程策划线上线下传播方案，<span class="achievement">荣获全国二等奖</span></li>
+                    <li><span data-lang="zh">访谈50+女性用户，撰写需求分析报告，明确传播方向</span><span data-lang="en" style="display:none;">Interviewed 50+ female users, wrote need analysis report</span></li>
+                    <li><span data-lang="zh">全流程策划线上线下传播方案，<span class="achievement">荣获全国二等奖</span></span><span data-lang="en" style="display:none;">Planned integrated campaign, <span class="achievement">won National Second Prize</span></span></li>
                 </ul>
             </div>
 
             <div class="experience-item">
                 <div class="item-header">
-                    <span class="item-title">个人小红书账号运营</span>
+                    <span class="item-title"><span data-lang="zh">个人小红书账号运营</span><span data-lang="en" style="display:none;">Personal RED Account</span></span>
                     <span class="item-date">2024.07 - 2024.08</span>
                 </div>
                 <ul>
-                    <li>0-1搭建账号，完成赛道分析、内容规划、视觉设计全流程</li>
-                    <li><span class="achievement">30万+爆款笔记</span>，8篇万阅内容，独立设计剪辑</li>
+                    <li><span data-lang="zh">0-1搭建账号，完成赛道分析、内容规划、视觉设计全流程</span><span data-lang="en" style="display:none;">Built account from scratch: niche analysis, content strategy, visual design</span></li>
+                    <li><span data-lang="zh"><span class="achievement">30万+爆款笔记</span>，8篇万阅内容，独立设计剪辑</span><span data-lang="en" style="display:none;"><span class="achievement">300K+ viral post</span>, 8 posts with 10K+ views, self-designed & edited</span></li>
                 </ul>
             </div>
         </section>
 
-        <section id="skills">
-            <h2>核心技能</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <h3>📊 数据分析</h3>
-                    <p>Excel高级函数、SPSS、Python、SQL基础、数据可视化、转化漏斗分析</p>
+        <!-- 精选作品集 -->
+        <section id="portfolio" class="fade-in">
+            <h2><span data-lang="zh">📁 精选作品</span><span data-lang="en" style="display:none;">📁 Featured Works</span></h2>
+            <div class="portfolio-grid">
+                <div class="project-card" onclick="openDetail('project1')">
+                    <h3><span data-lang="zh">拜耳“宫益健康”公关策划</span><span data-lang="en" style="display:none;">Bayer PR Campaign</span></h3>
+                    <p><strong><span data-lang="zh">角色：</span><span data-lang="en" style="display:none;">Role: </span></strong><span data-lang="zh">核心成员 | 全国二等奖</span><span data-lang="en" style="display:none;">Core Member | National 2nd Prize</span></p>
+                    <p style="margin-top:10px;"><span data-lang="zh">深度访谈50+女性，制定全渠道传播方案，覆盖线上线下...</span><span data-lang="en" style="display:none;">50+ interviews, omni-channel communication plan...</span></p>
+                    <button class="btn" style="margin-top:15px;"><span data-lang="zh">查看详情</span><span data-lang="en" style="display:none;">Details</span></button>
                 </div>
-                <div class="skill-card">
-                    <h3>📱 新媒体运营</h3>
-                    <p>小红书全案运营、内容策略、A/B测试、爆款打造、粉丝增长</p>
+                <div class="project-card" onclick="openDetail('project2')">
+                    <h3><span data-lang="zh">高途校园推广 Campaign</span><span data-lang="en" style="display:none;">Gaotu Campus Campaign</span></h3>
+                    <p><strong><span data-lang="zh">角色：</span><span data-lang="en" style="display:none;">Role: </span></strong><span data-lang="zh">独立策划执行 | 转化率提升15%</span><span data-lang="en" style="display:none;">Independent Lead | Conversion +15%</span></p>
+                    <p style="margin-top:10px;"><span data-lang="zh">3场线下活动，A/B测试物料，到场转化120%...</span><span data-lang="en" style="display:none;">3 offline events, A/B testing, show-up rate 120%...</span></p>
+                    <button class="btn" style="margin-top:15px;"><span data-lang="zh">查看详情</span><span data-lang="en" style="display:none;">Details</span></button>
                 </div>
-                <div class="skill-card">
-                    <h3>🎯 营销策划</h3>
-                    <p>活动全案策划、媒体投放、用户洞察、整合营销传播、公关执行</p>
-                </div>
-                <div class="skill-card">
-                    <h3>🎨 设计工具</h3>
-                    <p>PS、AI、Office高级排版、宣传物料设计、短视频剪辑</p>
+                <div class="project-card" onclick="openDetail('project3')">
+                    <h3><span data-lang="zh">小红书从0到1运营</span><span data-lang="en" style="display:none;">RED 0-to-1 Growth</span></h3>
+                    <p><strong><span data-lang="zh">角色：</span><span data-lang="en" style="display:none;">Role: </span></strong><span data-lang="zh">全盘负责人 | 30万+爆款</span><span data-lang="en" style="display:none;">Full Ownership | 300K+ Viral</span></p>
+                    <p style="margin-top:10px;"><span data-lang="zh">赛道分析、账号定位、内容规划、素材设计、数据复盘闭环...</span><span data-lang="en" style="display:none;">Niche analysis, positioning, content, design, data loop...</span></p>
+                    <button class="btn" style="margin-top:15px;"><span data-lang="zh">查看详情</span><span data-lang="en" style="display:none;">Details</span></button>
                 </div>
             </div>
         </section>
 
-        <section id="advantage">
-            <h2>核心竞争力</h2>
+        <!-- 核心技能 -->
+        <section id="skills" class="fade-in">
+            <h2><span data-lang="zh">核心技能</span><span data-lang="en" style="display:none;">Core Skills</span></h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>📊 <span data-lang="zh">数据分析</span><span data-lang="en" style="display:none;">Data Analytics</span></h3>
+                    <p><span data-lang="zh">Excel高级函数、SPSS、Python、SQL基础、数据可视化、转化漏斗分析</span><span data-lang="en" style="display:none;">Advanced Excel, SPSS, Python, SQL basics, visualization, funnel analysis</span></p>
+                </div>
+                <div class="skill-card">
+                    <h3>📱 <span data-lang="zh">新媒体运营</span><span data-lang="en" style="display:none;">New Media Operation</span></h3>
+                    <p><span data-lang="zh">小红书全案运营、内容策略、A/B测试、爆款打造、粉丝增长</span><span data-lang="en" style="display:none;">RED full-cycle, content strategy, A/B testing, viral content, follower growth</span></p>
+                </div>
+                <div class="skill-card">
+                    <h3>🎯 <span data-lang="zh">营销策划</span><span data-lang="en" style="display:none;">Marketing Planning</span></h3>
+                    <p><span data-lang="zh">活动全案策划、媒体投放、用户洞察、整合营销传播、公关执行</span><span data-lang="en" style="display:none;">Campaign planning, media buying, consumer insight, IMC, PR execution</span></p>
+                </div>
+                <div class="skill-card">
+                    <h3>🎨 <span data-lang="zh">设计工具</span><span data-lang="en" style="display:none;">Design Tools</span></h3>
+                    <p><span data-lang="zh">PS、AI、Office高级排版、宣传物料设计、短视频剪辑</span><span data-lang="en" style="display:none;">Photoshop, Illustrator, Office layout, promotional materials, short-video editing</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心竞争力 -->
+        <section id="advantage" class="fade-in">
+            <h2><span data-lang="zh">核心竞争力</span><span data-lang="en" style="display:none;">Competitive Edge</span></h2>
             <ul>
-                <li><span class="highlight">数据+营销双能力</span>：公关广告专业背景+数据分析硬核技能，适配产品/市场/商业洞察岗位</li>
-                <li><span class="highlight">大厂实战经验</span>：人民日报、高途、新东方等多段实习，可直接上手工作</li>
-                <li><span class="highlight">爆款打造能力</span>：小红书单篇30万+阅读，具备流量与转化思维</li>
-                <li><span class="highlight">全流程执行力</span>：从调研、策划、执行到数据复盘，完整项目经验</li>
-                <li>持有<span class="achievement">市场分析研究员(MARs)Level1证书</span>，雅思7分，全英文工作能力</li>
+                <li><span data-lang="zh"><span class="highlight">数据+营销双能力</span>：公关广告专业背景+数据分析硬核技能，适配产品/市场/商业洞察岗位</span><span data-lang="en" style="display:none;"><span class="highlight">Data + Marketing Hybrid</span>: PR & advertising background plus analytics, ideal for product/marketing/insights roles</span></li>
+                <li><span data-lang="zh"><span class="highlight">大厂实战经验</span>：人民日报、高途、新东方等多段实习，可直接上手工作</span><span data-lang="en" style="display:none;"><span class="highlight">Big-name Internships</span>: People's Daily, Gaotu, New Oriental; ready to contribute from day one</span></li>
+                <li><span data-lang="zh"><span class="highlight">爆款打造能力</span>：小红书单篇30万+阅读，具备流量与转化思维</span><span data-lang="en" style="display:none;"><span class="highlight">Viral Content Craft</span>: 300K+ views on RED, strong traffic & conversion mindset</span></li>
+                <li><span data-lang="zh"><span class="highlight">全流程执行力</span>：从调研、策划、执行到数据复盘，完整项目经验</span><span data-lang="en" style="display:none;"><span class="highlight">End-to-end Execution</span>: From research, planning, execution to data review</span></li>
+                <li><span data-lang="zh">持有<span class="achievement">市场分析研究员(MARs)Level1证书</span>，雅思7分，全英文工作能力</span><span data-lang="en" style="display:none;">Holding <span class="achievement">MARs Level 1 Certificate</span>, IELTS 7.0, full English proficiency</span></li>
             </ul>
         </section>
     </div>
 
+    <!-- 返回顶部按钮 -->
+    <button onclick="topFunction()" id="backToTopBtn" title="回到顶部">↑</button>
+
+    <!-- 作品详情模态框 -->
+    <div id="projectModal">
+        <div>
+            <span onclick="closeDetail()" style="position:absolute; top:15px; right:20px; font-size:28px; cursor:pointer; color:#aaa;">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
     <footer>
-        <p>© 2025 王清萌 | 个人作品集网站 | 期待产品营销/市场营销/数据分析/商业洞察实习机会</p>
+        <p>© 2025 王清萌 | <span data-lang="zh">个人作品集网站</span><span data-lang="en" style="display:none;">Portfolio Website</span> | <span data-lang="zh">期待产品营销/市场营销/数据分析/商业洞察实习机会</span><span data-lang="en" style="display:none;">Seeking Product Marketing / Marketing / Data Analytics / Business Insights Internships</span></p>
     </footer>
+
+    <script>
+        // 返回顶部
+        window.onscroll = function() {scrollFunction()};
+        function scrollFunction() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                document.getElementById("backToTopBtn").style.display = "block";
+            } else {
+                document.getElementById("backToTopBtn").style.display = "none";
+            }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+
+        // 淡入动画
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+        const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            });
+        }, appearOptions);
+        faders.forEach(fader => { appearOnScroll.observe(fader); });
+
+        // 语言切换
+        function switchLang(lang) {
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                const langs = el.getAttribute('data-lang').split(',');
+                if (langs.includes(lang)) {
+                    el.style.display = '';
+                } else {
+                    el.style.display = 'none';
+                }
+            });
+            localStorage.setItem('site-lang', lang);
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('site-lang') || 'zh';
+            switchLang(savedLang);
+        });
+
+        // 作品集弹窗
+        function openDetail(id) {
+            const details = {
+                project1: `<h2 style="margin-bottom:15px;">${document.querySelector('[data-lang="zh"]')?.parentElement?.querySelector('[data-lang="zh"]') ? '拜耳“宫益健康”公关策划' : 'Bayer PR Campaign'}</h2>
+                           <p><strong>时间 / Date：</strong>2025.05 - 2025.08</p>
+                           <p><strong>背景：</strong>拜耳为了推广宫颈健康知识，面向年轻女性开展公益项目。</p>
+                           <p><strong>我的工作：</strong></p>
+                           <ul>
+                               <li>设计并执行用户深度访谈（50+样本），提炼核心洞察</li>
+                               <li>撰写传播策略，确定“知识科普+情感共鸣”双线叙事</li>
+                               <li>策划线上挑战赛+线下社区讲座+商场体验展，总覆盖超10万人</li>
+                               <li>团队获全国二等奖</li>
+                           </ul>
+                           <p><strong>成果：</strong>产出完整策划案，被评委肯定为“具备实战落地性”。</p>`,
+                project2: `<h2 style="margin-bottom:15px;">高途校园推广 Campaign</h2>
+                           <p><strong>时间：</strong>2025.04 - 2025.06</p>
+                           <p><strong>目标：</strong>提升教培产品在大学生群体中的获客效率。</p>
+                           <p><strong>我的工作：</strong></p>
+                           <ul>
+                               <li>搭建转化漏斗模型（曝光→点击→咨询→报名），发现报名页跳出率高</li>
+                               <li>设计3场线下校园活动，使用A/B测试比较易拉宝文案与现场话术</li>
+                               <li>优化投放素材，最终整体转化率提升15%，到场转化超目标20%</li>
+                           </ul>
+                           <p><strong>成果：</strong>沉淀出一套校园推广的标准化SOP和数据复盘模板。</p>`,
+                project3: `<h2 style="margin-bottom:15px;">个人小红书账号运营</h2>
+                           <p><strong>时间：</strong>2024.07 - 2024.08</p>
+                           <p><strong>账号定位：</strong>留学经验+学习方法分享。</p>
+                           <p><strong>策略：</strong></p>
+                           <ul>
+                               <li>分析竞品爆款，制定“干货合集+情感故事”内容矩阵</li>
+                               <li>测试发布时间（早8/午12/晚8），发现晚8点互动最高</li>
+                               <li>独立设计封面、剪辑视频，形成系列视觉风格</li>
+                           </ul>
+                           <p><strong>成果：</strong>32篇笔记产出1篇30万+浏览爆款、8篇万阅笔记，验证了内容获客模型。</p>`
+            };
+            document.getElementById('modalContent').innerHTML = details[id];
+            document.getElementById('projectModal').style.display = 'flex';
+        }
+        function closeDetail() {
+            document.getElementById('projectModal').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('projectModal')) {
+                document.getElementById('projectModal').style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
+
+                                                                                                                                                                                                                                                                                                                          

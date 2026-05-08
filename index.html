@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>王清萌 | 产品营销·市场营销·数据分析·商业洞察</title>
+    <!-- 引入精致字体 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -11,34 +15,56 @@
             box-sizing: border-box;
         }
         body {
-            background-color: #f5f7fa;
-            color: #333;
+            background-color: #f7f8fc;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(102,126,234,0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(118,75,162,0.03) 0%, transparent 50%);
+            color: #2d2d2d;
             line-height: 1.6;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
         }
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
-        /* 导航栏 */
+        /* 导航栏升级版 */
         nav {
-            background: white;
+            background: rgba(255,255,255,0.85);
+            backdrop-filter: blur(10px);
             padding: 15px 30px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
             position: sticky;
             top: 0;
             z-index: 1000;
             flex-wrap: wrap;
+            border-bottom: 1px solid rgba(102,126,234,0.1);
         }
         nav a.brand {
-            font-weight: bold;
+            font-weight: 700;
             color: #667eea;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
+            letter-spacing: -0.5px;
+            position: relative;
+        }
+        nav a.brand::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transform: scaleX(0);
+            transition: transform 0.3s;
+            transform-origin: left;
+        }
+        nav a.brand:hover::after {
+            transform: scaleX(1);
         }
         .nav-links {
             display: flex;
@@ -53,28 +79,52 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: opacity 0.3s, transform 0.2s;
+            transition: opacity 0.3s, transform 0.2s, box-shadow 0.2s;
             margin: 5px;
             border: none;
             cursor: pointer;
+            font-family: inherit;
+            letter-spacing: 0.3px;
         }
         .btn:hover {
-            opacity: 0.9;
-            transform: scale(1.02);
+            opacity: 0.92;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 20px rgba(102,126,234,0.3);
         }
         .btn-outline {
             background: transparent;
             color: #333;
-            border: 1px solid #ddd;
+            border: 1px solid #e0e0e0;
+        }
+        .btn-outline:hover {
+            background: #f5f6ff;
+            border-color: #667eea;
+            color: #667eea;
         }
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             text-align: center;
-            padding: 60px 20px;
-            border-radius: 15px;
+            padding: 70px 20px;
+            border-radius: 24px;
             margin-bottom: 40px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 15px 40px rgba(102,126,234,0.25);
+            position: relative;
+            overflow: hidden;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 70%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
         .profile-pic {
             width:150px;
@@ -83,15 +133,25 @@
             border: 4px solid white;
             margin-bottom:20px;
             object-fit:cover;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            position: relative;
+            z-index: 1;
         }
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -1px;
+            position: relative;
+            z-index: 1;
         }
         .subtitle {
             font-size: 1.2rem;
-            opacity: 0.9;
+            opacity: 0.95;
             margin-bottom: 20px;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
         }
         .contact-info {
             display: flex;
@@ -99,31 +159,40 @@
             gap: 30px;
             flex-wrap: wrap;
             margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
         }
         .contact-item {
             display: flex;
             align-items: center;
             gap: 8px;
+            background: rgba(255,255,255,0.15);
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.95rem;
         }
         .lang-switch {
-            margin-top: 10px;
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
         }
         section {
             background: white;
-            border-radius: 20px;
-            padding: 35px;
+            border-radius: 24px;
+            padding: 40px;
             margin-bottom: 35px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.04);
+            transition: transform 0.2s ease, box-shadow 0.3s;
+            border: 1px solid rgba(102,126,234,0.04);
         }
         section:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transform: translateY(-4px);
+            box-shadow: 0 20px 45px rgba(102,126,234,0.1);
         }
         h2 {
             font-size: 1.8rem;
             font-weight: 700;
-            color: #333;
+            color: #1a1a1a;
             margin-bottom: 30px;
             position: relative;
             padding-bottom: 15px;
@@ -154,41 +223,53 @@
             flex-wrap: wrap;
         }
         .item-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #444;
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: #2d2d2d;
         }
         .item-date {
-            color: #666;
+            color: #888;
             font-size: 0.9rem;
+            background: #f5f5f5;
+            padding: 2px 12px;
+            border-radius: 15px;
         }
         .item-company {
             color: #667eea;
-            font-weight: 500;
+            font-weight: 600;
             margin-bottom: 10px;
         }
         ul {
             padding-left: 20px;
         }
         li {
-            margin-bottom: 8px;
+            margin-bottom: 10px;
             position: relative;
+            color: #444;
         }
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 20px;
         }
         .skill-card {
             background: #f8f9ff;
-            padding: 20px;
-            border-radius: 10px;
+            padding: 25px;
+            border-radius: 16px;
             border-left: 4px solid #667eea;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+        }
+        .skill-card:hover {
+            background: white;
+            box-shadow: 0 10px 25px rgba(102,126,234,0.1);
+            transform: translateY(-2px);
         }
         .skill-card h3 {
             color: #667eea;
             margin-bottom: 15px;
             font-size: 1.1rem;
+            font-weight: 600;
         }
         .highlight {
             background: linear-gradient(120deg, #e0e6ff 0%, #e0e6ff 100%);
@@ -196,15 +277,16 @@
             background-size: 100% 0.5em;
             background-position: 0 88%;
             padding: 0 3px;
+            font-weight: 500;
         }
         .achievement {
             color: #764ba2;
-            font-weight: 500;
+            font-weight: 600;
         }
         footer {
             text-align: center;
             padding: 30px;
-            color: #666;
+            color: #888;
             font-size: 0.9rem;
         }
         .fade-in {
@@ -225,25 +307,88 @@
         }
         .project-card {
             background: #f8f9ff;
-            padding: 25px;
-            border-radius: 15px;
+            padding: 30px 25px;
+            border-radius: 20px;
             transition: all 0.3s;
             cursor: pointer;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
         .project-card:hover {
-            background: #eef0ff;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(102,126,234,0.2);
+            background: white;
+            transform: translateY(-6px);
+            box-shadow: 0 20px 35px rgba(102,126,234,0.15);
+            border-color: #e0e6ff;
+        }
+        .project-card:hover::before {
+            opacity: 1;
         }
         .project-card h3 {
             color: #667eea;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        .project-card .btn {
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+        /* PDF 下载模块 */
+        .pdf-download {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        .pdf-item {
+            flex: 1;
+            min-width: 240px;
+            background: #fafbff;
+            padding: 25px;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s;
+            border: 1px solid #edf0ff;
+        }
+        .pdf-item:hover {
+            background: white;
+            box-shadow: 0 10px 25px rgba(102,126,234,0.1);
+            transform: translateY(-2px);
+        }
+        .pdf-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .pdf-info h4 {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .pdf-info .btn {
+            padding: 8px 20px;
+            font-size: 0.9rem;
         }
         /* 模态框 */
         #projectModal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 2000;
             left: 0;
             top: 0;
             width: 100%;
@@ -251,16 +396,18 @@
             background: rgba(0,0,0,0.5);
             align-items: center;
             justify-content: center;
+            backdrop-filter: blur(4px);
         }
         #projectModal>div {
             background: white;
             max-width: 700px;
             margin: auto;
-            border-radius: 20px;
-            padding: 40px;
+            border-radius: 28px;
+            padding: 45px;
             position: relative;
             max-height: 80vh;
             overflow-y: auto;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
         }
         #backToTopBtn {
             display: none;
@@ -272,26 +419,29 @@
             color: white;
             border: none;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 55px;
+            height: 55px;
             font-size: 24px;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(102,126,234,0.3);
-            transition: opacity 0.3s;
+            box-shadow: 0 8px 25px rgba(102,126,234,0.4);
+            transition: all 0.3s;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(102,126,234,0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(102,126,234,0); }
+            100% { box-shadow: 0 0 0 0 rgba(102,126,234,0); }
+        }
+        #backToTopBtn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(102,126,234,0.5);
         }
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            .contact-info {
-                gap: 15px;
-            }
-            section {
-                padding: 20px;
-            }
-            .item-header {
-                flex-direction: column;
-            }
+            h1 { font-size: 2rem; }
+            .contact-info { gap: 10px; }
+            section { padding: 25px; }
+            .item-header { flex-direction: column; }
+            .pdf-download { flex-direction: column; }
         }
     </style>
 </head>
@@ -310,8 +460,8 @@
     <!-- 头部 -->
     <header>
         <div class="container">
-            <!-- 替换下面的 src 为你的照片链接 -->
-            <img src="https://github.com/wangqingmeng5-wq/Sarah-portfolio/blob/main/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20260415114447_127_16.jpg" alt="王清萌" class="profile-pic">
+            <!-- 🔴 把下面的 src 链接换成你的真实照片链接 -->
+            <img src="https://via.placeholder.com/150" alt="王清萌" class="profile-pic">
             <h1>王清萌</h1>
             <p class="subtitle">
                 <span data-lang="zh">产品营销 | 市场营销 | 数据分析 | 商业洞察</span>
@@ -323,7 +473,7 @@
                 <div class="contact-item">🎓 <span data-lang="zh">北师港浸大 新闻传播(公关与广告)</span><span data-lang="en" style="display:none;">BNBU, Communication (PR & Advertising)</span></div>
             </div>
             <div class="lang-switch">
-                <button class="btn" onclick="switchLang('zh')" style="background:white; color:#667eea; border:1px solid white;">中文</button>
+                <button class="btn" onclick="switchLang('zh')" style="background:white; color:#667eea; border:1px solid white;">中 文</button>
                 <button class="btn" onclick="switchLang('en')" style="background:white; color:#667eea; border:1px solid white;">EN</button>
             </div>
         </div>
@@ -335,10 +485,7 @@
             <h2><span data-lang="zh">教育背景</span><span data-lang="en" style="display:none;">Education</span></h2>
             <div class="education-item">
                 <div class="item-header">
-                    <span class="item-title">
-                        <span data-lang="zh">公共关系与广告学 本科</span>
-                        <span data-lang="en" style="display:none;">B.A. in Public Relations & Advertising</span>
-                    </span>
+                    <span class="item-title"><span data-lang="zh">公共关系与广告学 本科</span><span data-lang="en" style="display:none;">B.A. in Public Relations & Advertising</span></span>
                     <span class="item-date">2023.09 - 2027.06</span>
                 </div>
                 <div class="item-company">北京师范大学-香港浸会大学联合国际学院</div>
@@ -422,7 +569,7 @@
             </div>
         </section>
 
-        <!-- 精选作品集 -->
+        <!-- 精选作品集（含 PDF 下载） -->
         <section id="portfolio" class="fade-in">
             <h2><span data-lang="zh">📁 精选作品</span><span data-lang="en" style="display:none;">📁 Featured Works</span></h2>
             <div class="portfolio-grid">
@@ -430,19 +577,41 @@
                     <h3><span data-lang="zh">拜耳“宫益健康”公关策划</span><span data-lang="en" style="display:none;">Bayer PR Campaign</span></h3>
                     <p><strong><span data-lang="zh">角色：</span><span data-lang="en" style="display:none;">Role: </span></strong><span data-lang="zh">核心成员 | 全国二等奖</span><span data-lang="en" style="display:none;">Core Member | National 2nd Prize</span></p>
                     <p style="margin-top:10px;"><span data-lang="zh">深度访谈50+女性，制定全渠道传播方案，覆盖线上线下...</span><span data-lang="en" style="display:none;">50+ interviews, omni-channel communication plan...</span></p>
-                    <button class="btn" style="margin-top:15px;"><span data-lang="zh">查看详情</span><span data-lang="en" style="display:none;">Details</span></button>
+                    <button class="btn"><span data-lang="zh">查看详情</span><span data-lang="en" style="display:none;">Details</span></button>
                 </div>
                 <div class="project-card" onclick="openDetail('project2')">
                     <h3><span data-lang="zh">高途校园推广 Campaign</span><span data-lang="en" style="display:none;">Gaotu Campus Campaign</span></h3>
                     <p><strong><span data-lang="zh">角色：</span><span data-lang="en" style="display:none;">Role: </span></strong><span data-lang="zh">独立策划执行 | 转化率提升15%</span><span data-lang="en" style="display:none;">Independent Lead | Conversion +15%</span></p>
                     <p style="margin-top:10px;"><span data-lang="zh">3场线下活动，A/B测试物料，到场转化120%...</span><span data-lang="en" style="display:none;">3 offline events, A/B testing, show-up rate 120%...</span></p>
-                    <button class="btn" style="margin-top:15px;"><span data-lang="zh">查看详情</span><span data-lang="en" style="display:none;">Details</span></button>
+                    <button class="btn"><span data-lang="zh">查看详情</span><span data-lang="en" style="display:none;">Details</span></button>
                 </div>
                 <div class="project-card" onclick="openDetail('project3')">
                     <h3><span data-lang="zh">小红书从0到1运营</span><span data-lang="en" style="display:none;">RED 0-to-1 Growth</span></h3>
                     <p><strong><span data-lang="zh">角色：</span><span data-lang="en" style="display:none;">Role: </span></strong><span data-lang="zh">全盘负责人 | 30万+爆款</span><span data-lang="en" style="display:none;">Full Ownership | 300K+ Viral</span></p>
                     <p style="margin-top:10px;"><span data-lang="zh">赛道分析、账号定位、内容规划、素材设计、数据复盘闭环...</span><span data-lang="en" style="display:none;">Niche analysis, positioning, content, design, data loop...</span></p>
-                    <button class="btn" style="margin-top:15px;"><span data-lang="zh">查看详情</span><span data-lang="en" style="display:none;">Details</span></button>
+                    <button class="btn"><span data-lang="zh">查看详情</span><span data-lang="en" style="display:none;">Details</span></button>
+                </div>
+            </div>
+
+            <!-- 🟢 PDF 作品集下载区：替换下面的链接 -->
+            <div class="pdf-download" style="margin-top:35px;">
+                <div class="pdf-item">
+                    <div class="pdf-icon">📄</div>
+                    <div class="pdf-info">
+                        <h4><span data-lang="zh">Photoshop 设计作品集</span><span data-lang="en" style="display:none;">PS Design Portfolio</span></h4>
+                        <p><span data-lang="zh">平面设计、视觉排版、宣传物料</span><span data-lang="en" style="display:none;">Graphic design, layout, promotional materials</span></p>
+                        <!-- 🔴 把 href 后面的链接换成你的 PS 作品集 PDF 链接 -->
+                        <a class="btn" href="https://你的PS作品集链接" target="_blank" style="margin-top:10px;"><span data-lang="zh">下载 PDF</span><span data-lang="en" style="display:none;">Download PDF</span></a>
+                    </div>
+                </div>
+                <div class="pdf-item">
+                    <div class="pdf-icon">📝</div>
+                    <div class="pdf-info">
+                        <h4><span data-lang="zh">公关写作作品集</span><span data-lang="en" style="display:none;">PR Writing Portfolio</span></h4>
+                        <p><span data-lang="zh">新闻稿、公关文案、传播策划</span><span data-lang="en" style="display:none;">Press releases, PR copy, communication plans</span></p>
+                        <!-- 🔴 把 href 后面的链接换成你的公关写作 PDF 链接 -->
+                        <a class="btn" href="https://你的公关写作作品集链接" target="_blank" style="margin-top:10px;"><span data-lang="zh">下载 PDF</span><span data-lang="en" style="display:none;">Download PDF</span></a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -545,7 +714,7 @@
         // 作品集弹窗
         function openDetail(id) {
             const details = {
-                project1: `<h2 style="margin-bottom:15px;">${document.querySelector('[data-lang="zh"]')?.parentElement?.querySelector('[data-lang="zh"]') ? '拜耳“宫益健康”公关策划' : 'Bayer PR Campaign'}</h2>
+                project1: `<h2 style="margin-bottom:15px;">拜耳“宫益健康”公关策划</h2>
                            <p><strong>时间 / Date：</strong>2025.05 - 2025.08</p>
                            <p><strong>背景：</strong>拜耳为了推广宫颈健康知识，面向年轻女性开展公益项目。</p>
                            <p><strong>我的工作：</strong></p>
@@ -591,5 +760,3 @@
     </script>
 </body>
 </html>
-
-                                                                                                                                                                                                                                                                                                                          

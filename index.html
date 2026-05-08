@@ -15,11 +15,11 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #f1e7e0;
+    background-color: #F5F0E1;
     background-image: 
-        radial-gradient(circle at 20% 30%, rgba(235,214,251,0.15) 0%, transparent 50%),
-        radial-gradient(circle at 80% 70%, rgba(171,166,162,0.1) 0%, transparent 50%);
-    color: #0d0c0a;
+        radial-gradient(circle at 20% 30%, rgba(217,198,178,0.2) 0%, transparent 50%),
+        radial-gradient(circle at 80% 70%, rgba(107,77,62,0.1) 0%, transparent 50%);
+    color: #2B2D42;
     line-height: 1.6;
     font-family: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
 }
@@ -30,22 +30,22 @@ body {
 }
 /* 导航栏 */
 nav {
-    background: rgba(241, 231, 224, 0.9);
+    background: rgba(245, 240, 225, 0.92);
     backdrop-filter: blur(10px);
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: 0 4px 20px rgba(13,12,10,0.05);
+    box-shadow: 0 4px 20px rgba(43,45,66,0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
     flex-wrap: wrap;
-    border-bottom: 1px solid #ebd6fb;
+    border-bottom: 1px solid #D9C6B2;
 }
 nav a.brand {
     font-weight: 700;
-    color: #0d0c0a;
+    color: #2B2D42;
     text-decoration: none;
     font-size: 1.2rem;
     letter-spacing: -0.5px;
@@ -58,7 +58,7 @@ nav a.brand::after {
     left: 0;
     width: 100%;
     height: 2px;
-    background: #ebd6fb;
+    background: #6F4D3E;
     transform: scaleX(0);
     transition: transform 0.3s;
     transform-origin: left;
@@ -75,7 +75,7 @@ nav a.brand:hover::after {
     display: inline-block;
     padding: 10px 25px;
     border-radius: 30px;
-    background: #0d0c0a;
+    background: #2B2D42;
     color: white;
     text-decoration: none;
     font-weight: 500;
@@ -89,26 +89,26 @@ nav a.brand:hover::after {
 .btn:hover {
     opacity: 0.9;
     transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(13,12,10,0.2);
+    box-shadow: 0 8px 20px rgba(43,45,66,0.25);
 }
 .btn-outline {
     background: transparent;
-    color: #0d0c0a;
-    border: 1px solid #aba6a2;
+    color: #2B2D42;
+    border: 1px solid #6F4D3E;
 }
 .btn-outline:hover {
-    background: #ebd6fb;
-    border-color: #0d0c0a;
-    color: #0d0c0a;
+    background: #D9C6B2;
+    border-color: #2B2D42;
+    color: #2B2D42;
 }
 header {
-    background: #0d0c0a;
+    background: #2B2D42;
     color: white;
     text-align: center;
     padding: 70px 20px;
     border-radius: 24px;
     margin-bottom: 40px;
-    box-shadow: 0 15px 40px rgba(13,12,10,0.25);
+    box-shadow: 0 15px 40px rgba(43,45,66,0.3);
     position: relative;
     overflow: hidden;
 }
@@ -119,7 +119,7 @@ header::before {
     left: -50%;
     width: 200%;
     height: 200%;
-    background: radial-gradient(circle at 30% 70%, rgba(235,214,251,0.2) 0%, transparent 50%);
+    background: radial-gradient(circle at 30% 70%, rgba(217,198,178,0.25) 0%, transparent 50%);
     animation: rotate 20s linear infinite;
 }
 @keyframes rotate {
@@ -130,10 +130,10 @@ header::before {
     width:150px;
     height:150px;
     border-radius:50%;
-    border: 4px solid #ebd6fb;
+    border: 4px solid #D9C6B2;
     margin-bottom:20px;
     object-fit:cover;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
     position: relative;
     z-index: 1;
 }
@@ -183,18 +183,18 @@ section {
     border-radius: 24px;
     padding: 40px;
     margin-bottom: 35px;
-    box-shadow: 0 8px 30px rgba(13,12,10,0.05);
+    box-shadow: 0 8px 30px rgba(43,45,66,0.06);
     transition: transform 0.2s ease, box-shadow 0.3s;
-    border: 1px solid #ebd6fb;
+    border: 1px solid #D9C6B2;
 }
 section:hover {
     transform: translateY(-4px);
-    box-shadow: 0 20px 45px rgba(13,12,10,0.1);
+    box-shadow: 0 20px 45px rgba(43,45,66,0.1);
 }
 h2 {
     font-size: 1.8rem;
     font-weight: 700;
-    color: #0d0c0a;
+    color: #2B2D42;
     margin-bottom: 30px;
     position: relative;
     padding-bottom: 15px;
@@ -206,17 +206,17 @@ h2::after {
     left: 0;
     width: 60px;
     height: 4px;
-    background: #ebd6fb;
+    background: #6F4D3E;
     border-radius: 2px;
 }
 .education-item, .experience-item {
     margin-bottom: 25px;
     padding-left: 25px;
-    border-left: 4px solid #ebd6fb;
+    border-left: 4px solid #D9C6B2;
     transition: border-color 0.3s;
 }
 .experience-item:hover {
-    border-left-color: #0d0c0a;
+    border-left-color: #6F4D3E;
 }
 .item-header {
     display: flex;
@@ -227,17 +227,17 @@ h2::after {
 .item-title {
     font-weight: 600;
     font-size: 1.15rem;
-    color: #0d0c0a;
+    color: #2B2D42;
 }
 .item-date {
-    color: #aba6a2;
+    color: #6F4D3E;
     font-size: 0.9rem;
-    background: #f1e7e0;
+    background: #F5F0E1;
     padding: 2px 12px;
     border-radius: 15px;
 }
 .item-company {
-    color: #0d0c0a;
+    color: #6F4D3E;
     font-weight: 600;
     margin-bottom: 10px;
 }
@@ -247,7 +247,7 @@ ul {
 li {
     margin-bottom: 10px;
     position: relative;
-    color: #0d0c0a;
+    color: #2B2D42;
 }
 .skills-grid {
     display: grid;
@@ -255,40 +255,38 @@ li {
     gap: 20px;
 }
 .skill-card {
-    background: #f1e7e0;
+    background: #F5F0E1;
     padding: 25px;
     border-radius: 16px;
-    border-left: 4px solid #0d0c0a;
+    border-left: 4px solid #6F4D3E;
     transition: all 0.3s;
-    box-shadow: 0 4px 12px rgba(13,12,10,0.02);
+    box-shadow: 0 4px 12px rgba(43,45,66,0.02);
 }
 .skill-card:hover {
     background: white;
-    box-shadow: 0 10px 25px rgba(13,12,10,0.1);
+    box-shadow: 0 10px 25px rgba(43,45,66,0.1);
     transform: translateY(-2px);
 }
 .skill-card h3 {
-    color: #0d0c0a;
+    color: #2B2D42;
     margin-bottom: 15px;
     font-size: 1.1rem;
     font-weight: 600;
 }
 .highlight {
-    background: #ebd6fb;
-    padding: 0 3px;
+    background: #D9C6B2;
+    padding: 0 5px;
     font-weight: 500;
+    color: #2B2D42;
 }
 .achievement {
-    color: #0d0c0a;
+    color: #6F4D3E;
     font-weight: 600;
-    text-decoration: underline;
-    text-decoration-color: #ebd6fb;
-    text-underline-offset: 3px;
 }
 footer {
     text-align: center;
     padding: 30px;
-    color: #aba6a2;
+    color: #6F4D3E;
     font-size: 0.9rem;
 }
 .fade-in {
@@ -308,12 +306,12 @@ footer {
     margin-top: 30px;
 }
 .project-card {
-    background: #f1e7e0;
+    background: #F5F0E1;
     padding: 30px 25px;
     border-radius: 20px;
     transition: all 0.3s;
     cursor: pointer;
-    border: 1px solid transparent;
+    border: 1px solid #D9C6B2;
     position: relative;
     overflow: hidden;
 }
@@ -324,21 +322,21 @@ footer {
     left: 0;
     width: 100%;
     height: 4px;
-    background: #0d0c0a;
+    background: #6F4D3E;
     opacity: 0;
     transition: opacity 0.3s;
 }
 .project-card:hover {
     background: white;
     transform: translateY(-6px);
-    box-shadow: 0 20px 35px rgba(13,12,10,0.15);
-    border-color: #ebd6fb;
+    box-shadow: 0 20px 35px rgba(43,45,66,0.1);
+    border-color: #6F4D3E;
 }
 .project-card:hover::before {
     opacity: 1;
 }
 .project-card h3 {
-    color: #0d0c0a;
+    color: #2B2D42;
     margin-bottom: 12px;
     font-size: 1.3rem;
     font-weight: 700;
@@ -357,27 +355,27 @@ footer {
 .pdf-item {
     flex: 1;
     min-width: 240px;
-    background: #f1e7e0;
+    background: #F5F0E1;
     padding: 25px;
     border-radius: 18px;
     display: flex;
     align-items: center;
     gap: 20px;
     transition: all 0.3s;
-    border: 1px solid #ebd6fb;
+    border: 1px solid #D9C6B2;
 }
 .pdf-item:hover {
     background: white;
-    box-shadow: 0 10px 25px rgba(13,12,10,0.08);
+    box-shadow: 0 10px 25px rgba(43,45,66,0.08);
     transform: translateY(-2px);
 }
 .pdf-icon {
     font-size: 3rem;
-    color: #0d0c0a;
+    color: #6F4D3E;
 }
 .pdf-info h4 {
     font-weight: 600;
-    color: #0d0c0a;
+    color: #2B2D42;
     margin-bottom: 8px;
 }
 .pdf-info .btn {
@@ -393,7 +391,7 @@ footer {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(13,12,10,0.6);
+    background: rgba(43,45,66,0.7);
     align-items: center;
     justify-content: center;
     backdrop-filter: blur(4px);
@@ -407,7 +405,7 @@ footer {
     position: relative;
     max-height: 80vh;
     overflow-y: auto;
-    box-shadow: 0 25px 60px rgba(13,12,10,0.3);
+    box-shadow: 0 25px 60px rgba(43,45,66,0.3);
 }
 #backToTopBtn {
     display: none;
@@ -415,7 +413,7 @@ footer {
     bottom: 30px;
     right: 30px;
     z-index: 99;
-    background: #0d0c0a;
+    background: #2B2D42;
     color: white;
     border: none;
     border-radius: 50%;
@@ -423,18 +421,18 @@ footer {
     height: 55px;
     font-size: 24px;
     cursor: pointer;
-    box-shadow: 0 8px 25px rgba(13,12,10,0.3);
+    box-shadow: 0 8px 25px rgba(43,45,66,0.3);
     transition: all 0.3s;
     animation: pulse 2s infinite;
 }
 @keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(13,12,10,0.3); }
-    70% { box-shadow: 0 0 0 15px rgba(13,12,10,0); }
-    100% { box-shadow: 0 0 0 0 rgba(13,12,10,0); }
+    0% { box-shadow: 0 0 0 0 rgba(43,45,66,0.3); }
+    70% { box-shadow: 0 0 0 15px rgba(43,45,66,0); }
+    100% { box-shadow: 0 0 0 0 rgba(43,45,66,0); }
 }
 #backToTopBtn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 30px rgba(13,12,10,0.5);
+    box-shadow: 0 12px 30px rgba(43,45,66,0.5);
 }
 @media (max-width: 768px) {
     h1 { font-size: 2rem; }
@@ -487,7 +485,9 @@ footer {
                     <span class="item-title"><span data-lang="zh">公共关系与广告学 本科</span><span data-lang="en" style="display:none;">B.A. in Public Relations & Advertising</span></span>
                     <span class="item-date">2023.09 - 2027.06</span>
                 </div>
-                <div class="item-company">北京师范大学-香港浸会大学联合国际学院</div>
+                <div class="item-company">
+                    <span class="campany-title"<span data-lang="zh">北京师范大学-香港浸会大学联合国际学院</span><span data-lang="en" style="display:none;">BEIJING NORMAL-HONG KONG BAPTIST UNIVERSITY</span></span>
+                </div>
                 <ul>
                     <li><span data-lang="zh">GPA 3.78/4.0，专业排名前10%，<span class="achievement">校级一等奖学金</span></span><span data-lang="en" style="display:none;">GPA 3.78/4.0, Top 10%, <span class="achievement">First-Class Scholarship</span></span></li>
                     <li><span data-lang="zh">核心课程：整合营销传播、消费者行为、Python数据分析、SPSS、媒体策划</span><span data-lang="en" style="display:none;">Core Courses: IMC, Consumer Behavior, Python, SPSS, Media Planning</span></li>
